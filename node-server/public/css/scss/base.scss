@@ -1,0 +1,11 @@
+a:hover {
+  text-decoration: none;
+}
+
+button {
+	outline: none;
+}
+
+button:focus, a:focus {
+  outline: none;
+}

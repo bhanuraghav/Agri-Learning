@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Web App</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/styles.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.7"></script>
+</head>
+
+<body>
+	<%- include('partials/navigation.ejs') %>
+	<div class='container'>
+		<form action="/" method="POST" enctype="multipart/form-data">
+			<div id="wrapper">
+				<input id="fileUpload" type="file" name="image">
+				<br />
+				<div id="image-holder"></div>
+			</div>
+			<div>
+				<button type="submit" id="submit">Submit</button>
+			</div>
+			<!-- <div>
+			  <div class="inputoutput">
+			    <img id="imageSrc" alt="No Image" />
+			    <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div>
+			  </div>
+			  <div class="inputoutput">
+			    <canvas id="canvasOutput" ></canvas>
+			    <div class="caption">canvasOutput</div>
+			  </div>
+			</div> -->
+		<!-- </form> -->
+		<!-- <main class="file-form">
+			<input type="file" id="file" multiple class="file-form__select-file">
+			<label for="file" class="file-form__select-file_label">Choose files</label>
+			<button type="submit" class="file-form__button file-form__button_predict" id="predict">Predict</button>
+			<button type="submit" class="file-form__button file-form__button_clear" id="clear">Clear</button>
+			<span class="file-form__files" id="number-of-files"></span>
+		</main>
+		<div id="preview"></div> -->
+		<% if(hasError) { %>
+			<h1><%= errorMessage %></h1>
+		<% } %>
+	</div>
+	<script type="text/javascript" src="/js/home.js"></script>
+<!-- 	<p id="status">OpenCV.js is loading...</p>
+	<script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
+	<script type="text/javascript">
+	let imgElement = document.getElementById('imageSrc');
+	let inputElement = document.getElementById('fileInput');
+	inputElement.addEventListener('change', (e) => {
+	  imgElement.src = URL.createObjectURL(e.target.files[0]);
+	}, false);
+	imgElement.onload = function() {
+		let mat = cv.imread(imgElement);
+		let dst = new cv.Mat();
+		let dsize = new cv.Size(50, 50);
+		// You can try more different parameters
+		cv.resize(mat, dst, dsize);
+		mat.delete();
+		const shape = [1, 50, 50, 3]; // 2 rows, 3 columns
+		const a = tf.tensor(dst, shape);
+		a.print();
+		console.log(a);
+		console.log(typeof dst);
+		console.log(dst);
+		console.log(dst);
+		dst = dst / 255.0;
+	  	
+	};
+	function onOpenCvReady() {
+	  document.getElementById('status').innerHTML = 'OpenCV.js is ready.';
+	}
+	</script>
+	<script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script> -->
+<%- include('partials/end.ejs') %>
