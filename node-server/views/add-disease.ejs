@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Web App</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/styles.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.7"></script>
+</head>
+
+    
+<body>
+
+<%- include('partials/navigation.ejs') %>
+
+<div class="container">
+    <h1 style="text-align:center;">Add Disease</h1>
+
+    <div class="card-body">
+            <hr>
+            <!-- 
+                name: String,
+                symptomsDiscription : String,
+                symptoms : [String],
+                diseaseCycle : String,
+                fertilizers : [{
+                    name : String,
+                    link : String
+                }]
+             -->
+            <!-- <div style="width: 30%; margin: 25px auto;"> -->
+            <div style="max-width: 50%;margin: 25px auto;">
+                <form action="/add-disease" method="POST">
+                   <div class="form-group ">
+                        <label >Crop Name</label>
+                        <input type="text" class="form-control"  placeholder="cropName" name="cropName" required=true>
+                      </div>
+                  <div class="form-group ">
+                    <label >Name</label>
+                    <input type="text" class="form-control"  placeholder="name" name="name" required=true>
+                  </div>
+                  <div class="form-group">
+                    <label >Symptoms 1</label>
+                    <input type="text" class="form-control" name="symptoms_1"  placeholder="symptoms_1" required=true>
+                  </div>
+                  <div class="form-group">
+                    <label >Symptoms 2</label>
+                    <input type="text" class="form-control" name="symptoms_2"  placeholder="symptoms_2" required=true>
+                  </div>
+                  <div class="form-group">
+                    <label >Symptoms 3</label>
+                    <input type="text" class="form-control" name="symptoms_3"  placeholder="symptoms_3">
+                  </div>
+                  <div class="form-group">
+                    <label >Symptoms 4</label>
+                    <input type="text" class="form-control" name="symptoms_4"  placeholder="symptoms_4" >
+                  </div>
+                  <div class="form-group">
+                    <label >Disease Cycle</label>
+                    <input type="textarea" class="form-control" name="diseaseCycle"  placeholder="diseaseCycle" >
+                  </div>
+
+                  <h2>Fertilizers</h2>
+                  <div class="form-group">
+                    <label >fertilizers 1</label>
+                    <input type="text" class="form-control" name="fertilizers_1_name"  placeholder="fertilizers_1_name" required=true>
+                    <input type="text" class="form-control" name="fertilizers_1_link"  placeholder="fertilizers_1_link" required=true>
+                  </div>
+                  <div class="form-group">
+                    <label >fertilizers 2</label>
+                    <input type="text" class="form-control" name="fertilizers_2_name"  placeholder="fertilizers_2_name" >
+                    <input type="text" class="form-control" name="fertilizers_2_link"  placeholder="fertilizers_2_link" >
+                  </div>
+                  <div class="form-group">
+                    <label >fertilizers 3</label>
+                    <input type="text" class="form-control" name="fertilizers_3_name"  placeholder="fertilizers_3_name" >
+                    <input type="text" class="form-control" name="fertilizers_3_link"  placeholder="fertilizers_3_link">
+                  </div>
+                  <div class="form-group">
+                    <label >fertilizers 4</label>
+                    <input type="text" class="form-control" name="fertilizers_4_name"  placeholder="fertilizers_4_name">
+                    <input type="text" class="form-control" name="fertilizers_4_link"  placeholder="fertilizers_4_link" >
+                  </div>
+                
+                 
+                  <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+                  <a class="btn btn-lg btn-block btn-danger" href="/">Cancel</a>
+                </form>
+            </div>
+    </div>
+</div>
+
+<%- include('partials/end.ejs') %>

@@ -10,7 +10,7 @@ router.get("/", homeControlller.getHome);
 router.post('/', homeControlller.postImage);
 
 router.get("/500", errorController.get500);
-
+// router.get('/add-disease', require('./addData.js'));
 router.use(errorController.get404);
 
 router.use((error, req, res, next) => {
@@ -21,5 +21,7 @@ router.use((error, req, res, next) => {
     error
   });
 });
+
+// router.use('/add-disease', require('./addData.js'));
 
 module.exports = router;
