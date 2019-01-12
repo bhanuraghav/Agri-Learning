@@ -1,6 +1,5 @@
 // // WHAT THE HELL AM I DOING HERE? :)
 // const tf = require("@tensorflow/tfjs");
-
 // // Optional Load the binding:
 // // Use '@tensorflow/tfjs-node-gpu' if running with GPU.
 // require("@tensorflow/tfjs-node");
@@ -8,7 +7,6 @@ const { spawn } = require("child_process");
 const path = require("path");
 const fs = require('fs');
 const request = require('request-promise');
-const axios = require('axios');
 const FormData = require('form-data');
 const fileHelper = require('../utils/file');
 
